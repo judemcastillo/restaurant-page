@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 2.5rem;
+    background-color: beige;
+    justify-content: space-between;
+    font-size: 30px;
+    align-items: center;
+}
+header h2{
+    font-size: 35px;
+    color: black;
+    margin: 30px;
+}
+header button{
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    height:100px;
+    width: 100px;
+    padding: 10px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-left: 2px solid black;
+}
+header button:hover{
+    background-color: burlywood;
+}
+body{
+    display: flex;
+    flex-direction: column;
+
+}
