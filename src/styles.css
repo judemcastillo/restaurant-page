@@ -1,44 +1,162 @@
+:root{
+    --main-color: #242424;
+    --secondary-color: rgb(230, 37, 76);
+    --third-color: rgb(104, 19, 36);
+    --accent-color: whitesmoke;
+    --font-family: 'montserrat', Courier;
+    --header-height: 80px;
+    --font-logo:"Dancing Script", cursive;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
 }
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #111;
+  }
 
 header{
     display: flex;
     flex-direction: row;
-    padding: 0px 2.5rem;
-    background-color: beige;
+    padding-left:2.5rem;  
+    background-color:var(--main-color);
     justify-content: space-between;
     font-size: 30px;
     align-items: center;
+    height: var(--header-height);
 }
 header h2{
-    font-size: 35px;
-    color: black;
-    margin: 30px;
+    font-size: 40px;
+    color: whitesmoke;
+    margin: 20px;
+    font-weight: bold;
+    font-family: var(--font-logo);
 }
 header button{
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     font-size: 30px;
     cursor: pointer;
-    height:100px;
-    width: 100px;
-    padding: 10px;
+    height:var(--header-height);
+    width: 140px;
+    padding: 10px 30px;
+    font-weight: 400;
+    color: var(--accent-color);
 }
 nav{
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    border-left: 2px solid black;
+    border-left: 4px solid whitesmoke;
+    background-color:var(--third-color);    
+    padding-right:2.5rem ;
 }
 header button:hover{
-    background-color: burlywood;
+    background-color: bisque;
+    color: var(--main-color);
 }
 body{
     display: flex;
     flex-direction: column;
-
+}
+.hero{
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    background-image: linear-gradient(to top, rgba(150, 15, 42, 0.808),rgba(58, 57, 57, 0.61)), url(./images/restaurant.jpg);
+    background-size: cover;
+}
+.welcome-message{
+    font-size:35px;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px var(--main-color);
+    h2{
+        font-family: sans-serif;
+    }
+}
+.logo-text{
+    font-family: var(--font-logo);
+    font-size: 80px;
+    font-weight: bold;
+}
+#menu-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(0deg, rgba(36, 36, 36, 0.856)), url(./images/menu.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+  }
+#menu-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+    padding: 50px;
+    z-index: 1;
+    background: transparent;
+    color: var(--accent-color);
+}
+.menu-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    padding: 20px;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    text-align: left;
+    gap: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.menu-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(230, 37, 76, 0.3);
+    background-color: var(--third-color);
+  }
+.menu-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.menu-item .price{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+footer{
+    text-align: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--main-color);
+    color: var(--accent-color);
 }
